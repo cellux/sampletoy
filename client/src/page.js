@@ -2,8 +2,6 @@ var Surface = require('famous/core/Surface');
 var HeaderFooterLayout = require('famous/views/HeaderFooterLayout');
 var FlexibleLayout = require('famous/views/FlexibleLayout');
 
-var Tone = require('tone');
-
 var grid = require('./grid');
 var instr = require('./instr');
 var fx = require('./fx');
@@ -45,7 +43,7 @@ function page() {
 
   var footer = new Surface({
     size: [undefined, 32],
-    content: 'footer: '+typeof(Tone.SignalBase),
+    content: 'footer',
     properties: {
       backgroundColor: '#484',
     },
