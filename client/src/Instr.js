@@ -7,7 +7,7 @@ function InstrumentSlot(name, instr) {
   self.instr = instr;
   self.view = new Surface({
     content: self.name,
-    size: [undefined, 100],
+    size: [undefined, 48],
     properties: {
       backgroundColor: '#99c',
     },
