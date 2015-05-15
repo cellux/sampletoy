@@ -1,13 +1,14 @@
 var Surface = require('famous/core/Surface');
 
 function instr() {
-  var instr = new Surface({
+  var self = {};
+  self.view = new Surface({
     content: 'instruments',
     properties: {
       backgroundColor: '#caa',
     },
   });
-  return instr;
+  return self;
 }
 
 module.exports = instr;

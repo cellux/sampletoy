@@ -1,13 +1,14 @@
 var Surface = require('famous/core/Surface');
 
 function fx() {
-  var fx = new Surface({
+  var self = {};
+  self.view = new Surface({
     content: 'master + secondary fx tracks',
     properties: {
       backgroundColor: '#aac',
     },
   });
-  return fx;
+  return self;
 }
 
 module.exports = fx;

@@ -4,15 +4,16 @@ var Transform = require('famous/core/Transform');
 var View = require('famous/core/View');
 
 function grid() {
+  var self = {};
   var pos = 0;
-  var self = new View();
+  self.view = new View();
   var grid = new Surface({
     content: 'grid',
     properties: {
       backgroundColor: '#ccc',
     },
   });
-  self.add(grid);
+  self.view.add(grid);
   var line = new Surface({
     size: [1, undefined],
     properties: {
@@ -25,8 +26,8 @@ function grid() {
   .alignFrom(function () {
     return [pos,0];
   });
-  self.add(lineMover).add(line);
-  self.on('position-change', function(t, o) {
+  self.view.add(lineMover).add(line);
+  self.view.on('position-change', function(t, o) {
     pos = o.value;
   });
   return self;

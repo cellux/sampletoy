@@ -1,3 +1,5 @@
+var assert = require('assert');
+
 var Surface = require('famous/core/Surface');
 var HeaderFooterLayout = require('famous/views/HeaderFooterLayout');
 var FlexibleLayout = require('famous/views/FlexibleLayout');
@@ -7,8 +9,8 @@ var instr = require('./instr');
 var fx = require('./fx');
 var env = require('./env');
 
-function page() {
-  var views = {
+function sampletoy() {
+  var self = {
     grid: grid(),
     instr: instr(),
     fx: fx(),
@@ -29,11 +31,11 @@ function page() {
   var grid_instruments = new FlexibleLayout({
     ratios: [0.618,0.382],
   });
-  grid_instruments.sequenceFrom([views.grid, views.instr]);
+  grid_instruments.sequenceFrom([self.grid.view, self.instr.view]);
   var fx_env = new FlexibleLayout({
     ratios: [0.618,0.382],
   });
-  fx_env.sequenceFrom([views.fx, views.env]);
+  fx_env.sequenceFrom([self.fx.view, self.env.view]);
   var main = new FlexibleLayout({
     ratios: [0.75, 0.25],
     direction: 1,
@@ -50,7 +52,8 @@ function page() {
   });
   layout.footer.add(footer);
 
-  return layout;
+  self.view = layout;
+  return self;
 }
 
-module.exports = page;
+module.exports = sampletoy;

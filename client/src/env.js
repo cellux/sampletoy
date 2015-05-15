@@ -1,13 +1,14 @@
 var Surface = require('famous/core/Surface');
 
 function env() {
-  var env = new Surface({
+  var self = {};
+  self.view = new Surface({
     content: 'envelope editor',
     properties: {
       backgroundColor: '#aca',
     },
   });
-  return env;
+  return self;
 }
 
 module.exports = env;
