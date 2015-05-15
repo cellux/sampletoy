@@ -1,21 +1,19 @@
-var assert = require('assert');
-
 var Surface = require('famous/core/Surface');
 var HeaderFooterLayout = require('famous/views/HeaderFooterLayout');
 var FlexibleLayout = require('famous/views/FlexibleLayout');
 
-var grid = require('./grid');
-var instr = require('./instr');
-var fx = require('./fx');
-var env = require('./env');
+var Grid = require('./Grid');
+var Instr = require('./Instr');
+var Fx = require('./Fx');
+var Env = require('./Env');
 
-function sampletoy() {
-  var self = {
-    grid: grid(),
-    instr: instr(),
-    fx: fx(),
-    env: env(),
-  };
+function SampleToy() {
+  var self = this;
+
+  self.grid = new Grid();
+  self.instr = new Instr();
+  self.fx = new Fx();
+  self.env = new Env();
 
   var layout = new HeaderFooterLayout();
 
@@ -56,4 +54,4 @@ function sampletoy() {
   return self;
 }
 
-module.exports = sampletoy;
+module.exports = SampleToy;

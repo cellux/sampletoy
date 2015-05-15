@@ -1,7 +1,7 @@
 var Surface = require('famous/core/Surface');
 
-function fx() {
-  var self = {};
+function Fx() {
+  var self = this;
   self.view = new Surface({
     content: 'master + secondary fx tracks',
     properties: {
@@ -11,4 +11,4 @@ function fx() {
   return self;
 }
 
-module.exports = fx;
+module.exports = Fx;

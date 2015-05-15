@@ -1,7 +1,7 @@
 var Surface = require('famous/core/Surface');
 
-function env() {
-  var self = {};
+function Env() {
+  var self = this;
   self.view = new Surface({
     content: 'envelope editor',
     properties: {
@@ -11,4 +11,4 @@ function env() {
   return self;
 }
 
-module.exports = env;
+module.exports = Env;

@@ -1,7 +1,7 @@
 var Surface = require('famous/core/Surface');
 
-function instr() {
-  var self = {};
+function Instr() {
+  var self = this;
   self.view = new Surface({
     content: 'instruments',
     properties: {
@@ -11,4 +11,4 @@ function instr() {
   return self;
 }
 
-module.exports = instr;
+module.exports = Instr;

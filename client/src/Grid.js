@@ -3,9 +3,9 @@ var Modifier = require('famous/core/Modifier');
 var Transform = require('famous/core/Transform');
 var View = require('famous/core/View');
 
-function grid() {
-  var self = {};
-  var pos = 0;
+function Grid() {
+  var self = this;
+  self.pos = 0;
   self.view = new View();
   var grid = new Surface({
     content: 'grid',
@@ -24,13 +24,13 @@ function grid() {
     opacity: 0.25
   })
   .alignFrom(function () {
-    return [pos,0];
+    return [self.pos,0];
   });
   self.view.add(lineMover).add(line);
   self.view.on('position-change', function(t, o) {
-    pos = o.value;
+    self.pos = o.value;
   });
   return self;
 }
 
-module.exports = grid;
+module.exports = Grid;
